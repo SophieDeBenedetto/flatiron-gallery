@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_from_auth(auth_hash)
+    binding.pry
     if user
       log_in(user)
       redirect_to galleries_path
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
 
   private
 
-    def auth_hash
-      request.env['omniauth.auth']
-    end
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 end
