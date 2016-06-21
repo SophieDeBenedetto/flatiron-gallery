@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   # resources :collaborations
-  root "welcome#home"
+  root "projects#index"
+  resources :projects, except: [:index] 
   resources :users
-  resources :cohorts do 
-    resources :projects
-  end
+  resources :cohorts
 
   get '/auth/google_oauth2/callback', to: "sessions#create"
   # auth/google_oauth2/callback

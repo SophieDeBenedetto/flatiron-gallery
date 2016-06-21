@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap.min
+//= require jquery.nav
+//= require main
+//= require nivo-lightbox.min
+//= require queryloader2.min
+//= require supersized.3.2.7.min
 //= require_tree .
