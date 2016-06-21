@@ -3,7 +3,8 @@ class User < ApplicationRecord
   has_many :collaborations
   has_many :projects, through: :collaborations
 
-  def find_from_auth(auth_hash)
-    User.find_by(email: ['omniauth.auth']["info"]["email"]) 
+  def self.find_from_auth(auth_hash)
+    binding.pry
+    User.find_by(email: auth_hash["info"]["email"])
   end
 end
