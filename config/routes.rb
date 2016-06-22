@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   # resources :collaborations
   root "welcome#home"
   resources :users
-  resources :cohorts do 
-    resources :projects
-  end
+  resources :projects
+  resources :cohorts
 
   get '/auth/google_oauth2/callback', to: "sessions#create"
   # auth/google_oauth2/callback

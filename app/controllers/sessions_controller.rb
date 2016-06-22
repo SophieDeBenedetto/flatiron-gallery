@@ -2,10 +2,11 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_from_auth(auth_hash)
-    binding.pry
     if user
       log_in(user)
-      redirect_to galleries_path
+      redirect_to projects_path
+    else
+      redirect_to root_path
     end
   end
 
