@@ -26,15 +26,13 @@ function classReg( className ) {
 var hasClass, addClass, removeClass;
 if ( 'classList' in document.documentElement ) {
   hasClass = function( elem, c ) {
-    debugger;
-    return elem.classList.contains( c );
+    return document.querySelector( '.cbp-af-header' ).classList.contains( c );
   };
   addClass = function( elem, c ) {
-    debugger;
-    elem.classList.add( c );
+    document.querySelector( '.cbp-af-header' ).classList.add( c );
   };
   removeClass = function( elem, c ) {
-    elem.classList.remove( c );
+    document.querySelector( '.cbp-af-header' ).classList.remove( c );
   };
 }
 else {

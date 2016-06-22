@@ -26,9 +26,8 @@ var cbpAnimatedHeader = (function() {
 
 	function scrollPage() {
 		var sy = scrollY();
-		debugger;
 		if ( sy >= changeHeaderOn ) {
-			debugger;
+			// debugger;
 			classie.add( header, 'cbp-af-header-shrink' );
 		}
 		else {
