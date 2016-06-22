@@ -12,5 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
+//= require bootstrap.min
+//= require jquery-1.11.1
+//= require jquery.fitvids
+//= require jquery.jigowatt_contactform
+//= require jquery.jigowatt_newsletter
+//= require jquery.nav
+//= require jquery.tubular.1.0
+//= require main
+//= require nivo-lightbox.min
+//= require owl.carousel.min
+//= require queryloader2.min
+//= require supersized.3.2.7.min
 //= require_tree .
