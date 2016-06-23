@@ -14,10 +14,6 @@ $.fn.showForm = function(e) {
   })
 };
 
-// function addShowFormListener(){
-//   $(body).on(""click")
-// }
-
 function submitForm(){
   $("form input").keypress(function(event) {
     if (event.which == 13) {
@@ -29,13 +25,6 @@ function submitForm(){
         data: $(this).parents('form').serialize()
         })
       }
-      // $("form").submit();
-      // var selector = $(this).attr('id');
-      // debugger;
-      // $("[data-id='" + selector + "']").val($(this).val())
-      // var type = $(this).parents('form').parent().data().show.split("-")[0];
-      // $("[data-show='" + type + "-form']").hide();
-      // $("[data-show='" + type + "']").show();
     })
   };
 
