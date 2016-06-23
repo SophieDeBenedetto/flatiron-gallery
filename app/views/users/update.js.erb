@@ -1,5 +1,4 @@
-// debugger;
-$("[data-show='<%= @form_type %>']").html("<%= j render partial: 'users/links', locals: {user: @user} %>")
+$("[data-show='<%= @form_type %>']").html('<%= j render partial: "users/#{@form_type}", locals: {user: @user} %>')
 $("[data-select='edit']").showForm();
 $("[data-show='<%= @form_type %>-form']").hide();
 $("[data-show='<%= @form_type %>']").show();
