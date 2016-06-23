@@ -1,0 +1,8 @@
+<ul class="jobinfo">
+  <li><i class="fa fa-pencil-square-o" aria-hidden="true" data-select="edit" data-type="links" style="margin-right: 255px"></i><%=link_to "github", "http://github.com/#{user.github}"%></li>
+  <li><%=link_to "twitter", "https://twitter.com/#{user.twitter}"%></li>
+  <li><%=user.email%></li>
+  <li><%=link_to "linkedin", "https://linkedin.com/in#{user.linkedin}"%></li>
+  <li><%=link_to "personal site", user.personal_site%></li>
+  <li><%=link_to "blog", user.blog_url%></li>
+</ul>

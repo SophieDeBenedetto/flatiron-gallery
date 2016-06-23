@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Project, :type => :model do
   context "validations" do 
-    describe "#heroku_url" do 
-      it "is invalid without a heroku url" do 
-        user = FactoryGirl.build(:project, heroku_url: nil)
+    describe "#deployed_url" do 
+      it "is invalid without a deployed url" do 
+        user = FactoryGirl.build(:project, deployed_url: nil)
         expect(user).to_not be_valid
       end
     end
