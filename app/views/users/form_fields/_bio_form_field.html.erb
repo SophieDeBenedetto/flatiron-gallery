@@ -1,0 +1,7 @@
+<%= form_for user, remote: true do |f| %>
+  <%= f.text_field :first_name, placeholder: user.first_name %> <%= f.text_field :last_name, placeholder: user.last_name %>
+  <div class="e-divider-2"></div>
+  <p>
+   <%= f.text_area :bio, placeholder: user.bio, style: "height: 225px" %>
+  </p>
+<% end %>

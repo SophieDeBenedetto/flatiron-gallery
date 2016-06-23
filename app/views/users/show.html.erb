@@ -1,0 +1,115 @@
+<section id="port-item-details">
+  <div class="container-fluid padding-side-60" id="profile-page">
+
+     <div class="e-divider-8"></div>
+     <div class="post-header">
+        <div class="e-divider-2"></div>
+     </div>
+     <div class="e-divider-4"></div>
+     <div class="row">
+        <div class="col-md-4">
+          <%= image_tag @user.show_avatar, class: "img-responsive" %>
+           <div class="e-divider-4"></div>
+           <ul class="jobinfo">
+              <li><%=link_to "github", "http://github.com/#{@user.github}"%></li>
+              <li><%=link_to "twitter", "https://twitter.com/#{@user.twitter}"%></li>
+              <li><%=@user.email%></li>
+              <li><%=link_to "linkedin", "https://linkedin.com/in#{@user.linkedin}"%></li>
+              <li><%=link_to "personal site", @user.personal_site%></li>
+              <li><%=link_to "blog", @user.blog_url%></li>
+           </ul>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+           <h3 class="font-accident-two-normal e-uppercase"><%= @user.full_name %></h3>
+           <div class="e-divider-2"></div>
+           <p>
+              <%= @user.bio %>
+           </p>
+
+           <div class="e-divider-4"></div>
+
+           <div class="row">
+              <div class="col-md-4">
+                 <i class="pe-7s-target"></i>
+                 <h4 class="font-accident-two-normal e-uppercase">Details</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+              <div class="col-md-4">
+                 <i class="pe-7s-science"></i>
+                 <h4 class="font-accident-two-normal e-uppercase">Misc</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+              <div class="col-md-4">
+                 <i class="pe-7s-target"></i>
+                 <h4 class="font-accident-two-normal e-uppercase">Details</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+           </div>
+
+           <div class="row">
+              <div class="col-md-3">
+                 <h4 class="font-accident-two-normal e-uppercase">Wiki Information</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+              <div class="col-md-3">
+                 <h4 class="font-accident-two-normal e-uppercase">Growing Income</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+              <div class="col-md-3">
+                 <h4 class="font-accident-two-normal e-uppercase">Fast Response</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+              <div class="col-md-3">
+                 <h4 class="font-accident-two-normal e-uppercase">Appearance</h4>
+                 <div class="e-divider-1"></div>
+                 <p class="small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard
+                 </p>
+                 <div class="e-divider-4"></div>
+              </div>
+           </div>
+
+        </div>
+     </div>
+
+     <div class="e-divider-20"></div>
+
+     <div class="e-divider-4"></div>
+  </div>
+</section>
+
