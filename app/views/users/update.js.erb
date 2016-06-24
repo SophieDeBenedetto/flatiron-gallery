@@ -1,4 +1,10 @@
-$("[data-show='<%= @form_type %>']").html('<%= j render partial: "users/#{@form_type}", locals: {user: @user} %>')
-$("[data-select='edit']").showForm();
-$("[data-show='<%= @form_type %>-form']").hide();
-$("[data-show='<%= @form_type %>']").show();
+if("<%=@form_type%>" != "avatar") {
+  $("[data-show='<%= @form_type %>']").html('<%= j render partial: "users/#{@form_type}", locals: {user: @user} %>')
+  $("[data-select='edit']").showForm();
+  $("[data-show='<%= @form_type %>-form']").hide();
+  $("[data-show='<%= @form_type %>']").show();
+} else {
+  $("#profile-pic").attr('src', "<%=@user.avatar.url%>")
+  $(".modal-backdrop.in").css('opacity', 0)
+  $("#myModal").removeClass('in');
+}

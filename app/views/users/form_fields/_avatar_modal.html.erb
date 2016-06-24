@@ -1,0 +1,18 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">add a new repo</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for user, html: {multipart: :true}, remote: true,  
+    :authenticity_token => true do |f| %>
+          <%= f.file_field :avatar %>
+          <%= f.submit%>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

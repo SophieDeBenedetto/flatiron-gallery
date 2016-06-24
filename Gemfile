@@ -19,8 +19,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'remotipart', github: 'mshibuya/remotipart', ref: '3a6acb3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5.x'
+# gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Use Redis adapter to run Action Cable in production
@@ -35,7 +36,10 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
 gem "font-awesome-rails"
+gem 'sidekiq'
+gem 'redis'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -3,6 +3,7 @@ $(function(){
   $("[data-show='links-form']").hide();
   $("[data-select='edit']").showForm();
   submitForm();
+  submitAvatarForm();
 })
 
 $.fn.showForm = function(e) {
@@ -22,6 +23,7 @@ function submitForm(){
     handleSubmit(this);
   });
 }
+
 
 function handleSubmit(that){
   if (event.which == 13) {
