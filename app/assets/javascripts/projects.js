@@ -3,7 +3,6 @@ $(function(){
   $("[data-show='links-form']").hide();
   $("[data-select='edit']").showForm();
   submitForm();
-  submitAvatarForm();
 })
 
 $.fn.showForm = function(e) {

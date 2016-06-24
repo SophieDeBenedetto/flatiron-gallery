@@ -10,6 +10,15 @@ body #port-item-details i {
     font-size: 20px;
 }
 
+.panel.custom {
+  width: 65%;
+  margin-left: 17%;
+}
+
+.panel.custom li {
+  list-style: none;
+}
+
 body {
   display: block;
   overflow-x: hidden;

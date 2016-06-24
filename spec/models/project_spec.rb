@@ -14,6 +14,12 @@ RSpec.describe Project, :type => :model do
         user = FactoryGirl.build(:project, github_repo: nil)
         expect(user).to_not be_valid
       end
+
+      it "must have a unique github repo" do 
+        project = FactoryGirl.create(:project)
+        project_2 = FactoryGirl.build(:project)
+        expect(project_2).to_not be_valid
+      end
     end
 
     describe "#name" do
