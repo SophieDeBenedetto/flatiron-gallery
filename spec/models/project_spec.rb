@@ -4,22 +4,30 @@ RSpec.describe Project, :type => :model do
   context "validations" do 
     describe "#deployed_url" do 
       it "is invalid without a deployed url" do 
-        user = FactoryGirl.build(:project, deployed_url: nil)
-        expect(user).to_not be_valid
+        project = FactoryGirl.build(:project, deployed_url: nil)
+        expect(project).to_not be_valid
       end
     end
 
-    describe "#github_repo" do
-      it "is invalid without a github repo" do 
-        user = FactoryGirl.build(:project, github_repo: nil)
-        expect(user).to_not be_valid
+    describe "#github_repos" do
+      it "is invalid without any values in the github_repos array" do 
+        project = FactoryGirl.build(:project, github_repos: nil)
+        expect(project).to_not be_valid
+        project.github_repos = []
+        expect(project).to_not be_valid
+      end
+
+      it "must have a unique github repo" do 
+        project = FactoryGirl.create(:project)
+        project_2 = FactoryGirl.build(:project)
+        expect(project_2).to_not be_valid
       end
     end
 
     describe "#name" do
       it "is invalid without a name" do 
-        user = FactoryGirl.build(:project, name: nil)
-        expect(user).to_not be_valid
+        project = FactoryGirl.build(:project, name: nil)
+        expect(project).to_not be_valid
       end
     end
   end

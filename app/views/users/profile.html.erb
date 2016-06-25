@@ -9,7 +9,7 @@
      <div class="e-divider-4"></div>
      <div class="row">
         <div class="col-md-4">
-          <%= image_tag @user.show_avatar, class: "img-responsive" %>
+          <%= render partial: "users/avatar", locals: {user: @user} %>
            <div data-show="links"> 
              <%= render partial: 'users/links', locals: {user: @user} %>
            </div>
@@ -108,5 +108,8 @@
      </div>
   </div>
 </section>
-<%= render partial: "projects/form", locals: {project: Project.new} %>
+<div id="new-project">
+  <%= render partial: "projects/form", locals: {project: Project.new} %>
+</div>
+
 

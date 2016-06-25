@@ -15,17 +15,25 @@ $.fn.showForm = function(e) {
 };
 
 function submitForm(){
-  $("form input").keypress(function(event) {
-    if (event.which == 13) {
-      event.preventDefault();
-      var userId = $("#user-id").html();
-      $.ajax({
-        method: "PATCH",
-        url: "/users/" + userId,
-        data: $(this).parents('form').serialize()
-        })
-      }
+  $("form#user textarea").keypress(function(event) {
+    handleSubmit(this);
+  });
+  $("form#user input").keypress(function(event) {
+    handleSubmit(this);
+  });
+}
+
+
+function handleSubmit(that){
+  if (event.which == 13) {
+    event.preventDefault();
+    var userId = $("#user-id").html();
+    $.ajax({
+      method: "PATCH",
+      url: "/users/" + userId,
+      data: $(that).parents('form').serialize()
     })
-  };
+  }
+}
 
 

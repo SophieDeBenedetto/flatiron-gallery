@@ -1,9 +1,9 @@
-<form >
+<form id="user">
   <input name="user[first_name]" value="<%= user.first_name %>">
   <input name="user[last_name]" value="<%= user.last_name%>">
   <div class="e-divider-2"></div>
   <p>
-   <input name="user[bio]" value="<%=user.bio%>" style: "height: 225px" %>
+   <textarea name="user[bio]" style="height: 255px"><%=user.bio%></textarea>
    <input type="hidden" name="form" value="bio">
   </p>
 </form>

@@ -1,0 +1,5 @@
+<% project.errors.messages.each do |type, messages| %>
+  <% messages.each do |m| %>
+  <li><%= type.to_s.gsub "_", " " %> <%= m %></li>
+  <% end %>
+<% end %>
