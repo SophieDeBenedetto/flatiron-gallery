@@ -18,49 +18,16 @@
     <div id="preloader"><%=image_tag 'preloader.gif'%></div>
       <div id="wrapper" class="">
         <a href="#menu-toggle" class="" id="menu-toggle"><span class="" aria-hidden="true"></span></a>
-        <h1><%= notice %></h1>
 
    <!-- Sidebar -->
      <%= render partial: 'layouts/sidebar' %>
-
+   <!-- /#sidebar-wrapper -->
 
    <!-- Content -->
    <div id="page-content-wrapper" class="content-wrap">
 
       <!-- Header -->
-      <header class="cbp-af-header toggled">
-         <div class="cbp-af-inner">
-            <div class="navbar navbar-default" role="navigation">
-               <div class="container-fluid padding-side-50">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                     </button>
-                  </div>
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <nav class="collapse navbar-collapse navbar-ex1-collapse">
-                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                           <a class="dropdown-toggle" data-toggle="dropdown">Dropdown  <b class="caret"></b></a>
-                           <ul class="dropdown-menu">
-                              <li><a href="#">Action</a></li>
-                              <li><a href="#">Another action</a></li>
-                              <li><a href="#">Something else here</a></li>
-                              <li><a href="#">Separated link</a></li>
-                           </ul>
-                        </li>
-                        <%= render partial: "layouts/login_and_out" %>
-                     </ul>
-                  </nav><!-- /.navbar-collapse -->
-               </div>
-            </div>
-         </div>
-      </header>
-    <%= yield %>
+      <%= yield %>
     </div>
   </body>
 </html>
