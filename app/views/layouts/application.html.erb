@@ -18,7 +18,6 @@
     <div id="preloader"><%=image_tag 'preloader.gif'%></div>
       <div id="wrapper" class="">
         <a href="#menu-toggle" class="" id="menu-toggle"><span class="" aria-hidden="true"></span></a>
-        <h1><%= notice %></h1>
 
    <!-- Sidebar -->
 
@@ -29,41 +28,25 @@
             <%=image_tag "flatiron_school_slashes_transparent_background.png", height: "50", width: "35", alt: "logo"%>
            </li>
            <li class="e-divider-4"></li>
-           <li><a href="index.html" class="current">Home</a></li>
-           <li><a href="about.html">About</a></li>
-           <li><a href="portfolio.html">Portfolio</a></li>
-           <li><a href="blog.html">Blog</a></li>
-           <li><%=link_to 'login with gmail', "/auth/#{:google_oauth2}"%>
+            <li><a href="/projects" class="current">Gallery</a></li>
+          <% if logged_in? %>
+              <li><%= link_to "Profile", profile_path %></li>
+          <% end %>
+           <li><%= render partial: "layouts/login_and_out"%>
 </li>
         </ul>
         <div class="e-divider-4"></div>
         <div class="side-widget">
-           <h6 class="font-accident-one-bold color03 e-uppercase">Visual Impact</h6>
+           <h6 class="font-accident-one-bold color03 e-uppercase">Flatiron School</h6>
            <p class="small">
-              There are many variations of passages of Lorem Ipsum available.
+              Some lovely quote about why Flatiron is Amazing
            </p>
-        </div>
-        <div class="side-widget">
-           <h6 class="font-accident-one-bold color03 e-uppercase">Subscribe to news</h6>
-           <input>
         </div>
         <div class="bottom-widget">
            <p class="small">
               © 2016 Folius LLC.
            </p>
-           <p class="small color04">
-              Port Orange 23645, Florida USA
-              Tel: 1 234 345 45 35
-           </p>
-           <div>
-              <a href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-vimeo-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-tumblr-square" aria-hidden="true"></i></a>
-           </div>
+            
         </div>
      </div>
    <!-- /#sidebar-wrapper -->
@@ -72,39 +55,7 @@
    <div id="page-content-wrapper" class="content-wrap">
 
       <!-- Header -->
-      <header class="cbp-af-header toggled">
-         <div class="cbp-af-inner">
-            <div class="navbar navbar-default" role="navigation">
-               <div class="container-fluid padding-side-50">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                     </button>
-                  </div>
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <nav class="collapse navbar-collapse navbar-ex1-collapse">
-                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                           <a class="dropdown-toggle" data-toggle="dropdown">Dropdown  <b class="caret"></b></a>
-                           <ul class="dropdown-menu">
-                              <li><a href="#">Action</a></li>
-                              <li><a href="#">Another action</a></li>
-                              <li><a href="#">Something else here</a></li>
-                              <li><a href="#">Separated link</a></li>
-                           </ul>
-                        </li>
-                        <%= render partial: "layouts/login_and_out" %>
-                     </ul>
-                  </nav><!-- /.navbar-collapse -->
-               </div>
-            </div>
-         </div>
-      </header>
-    <%= yield %>
+      <%= yield %>
     </div>
   </body>
 </html>
