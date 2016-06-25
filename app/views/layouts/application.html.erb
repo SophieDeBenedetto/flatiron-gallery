@@ -19,50 +19,7 @@
         <a href="#menu-toggle" class="" id="menu-toggle"><span class="" aria-hidden="true"></span></a>
 
    <!-- Sidebar -->
-     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-           <li class="e-divider-4"></li>
-           <li class="sidebar-brand">
-            <%=image_tag "flatiron_school_slashes_transparent_background.png", height: "50", width: "35", alt: "logo"%>
-           </li>
-           <li class="e-divider-4"></li>
-           <li><a href="index.html" class="current">Home</a></li>
-           <li><a href="about.html">About</a></li>
-           <li><a href="portfolio.html">Portfolio</a></li>
-           <li><a href="blog.html">Blog</a></li>
-           <li><%=link_to 'login with gmail', "/auth/#{:google_oauth2}"%>
-</li>
-        </ul>
-        <div class="e-divider-4"></div>
-        <div class="side-widget">
-           <h6 class="font-accident-one-bold color03 e-uppercase">Visual Impact</h6>
-           <p class="small">
-              There are many variations of passages of Lorem Ipsum available.
-           </p>
-        </div>
-        <div class="side-widget">
-           <h6 class="font-accident-one-bold color03 e-uppercase">Subscribe to news</h6>
-           <input>
-        </div>
-        <div class="bottom-widget">
-           <p class="small">
-              © 2016 Folius LLC.
-           </p>
-           <p class="small color04">
-              Port Orange 23645, Florida USA
-              Tel: 1 234 345 45 35
-           </p>
-           <div>
-              <a href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-vimeo-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-              <a href="#!"><i class="fa fa-tumblr-square" aria-hidden="true"></i></a>
-           </div>
-        </div>
-     </div>
+     <%= render partial: 'layouts/sidebar' %>
    <!-- /#sidebar-wrapper -->
 
    <!-- Content -->
