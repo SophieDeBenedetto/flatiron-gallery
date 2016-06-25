@@ -25,15 +25,18 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	function scrollPage() {
-		var sy = scrollY();
-		if ( sy >= changeHeaderOn ) {
-			// debugger;
+		if ($('div#profile-page').length > 0) {
+			var sy = scrollY();
+			if ( sy >= changeHeaderOn ) {
+				classie.add( header, 'cbp-af-header-shrink' );
+			}
+			else {
+				classie.remove( header, 'cbp-af-header-shrink' );
+			}
+			didScroll = false;
+		} else {
 			classie.add( header, 'cbp-af-header-shrink' );
 		}
-		else {
-			classie.remove( header, 'cbp-af-header-shrink' );
-		}
-		didScroll = false;
 	}
 
 	function scrollY() {

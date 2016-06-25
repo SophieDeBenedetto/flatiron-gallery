@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'paperclip'
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # resources :collaborations
-  root "welcome#home"
+  root "projects#index"
   resources :users
+  get "/profile", to: "users#profile", as: "profile"
   resources :projects
   resources :cohorts
 
