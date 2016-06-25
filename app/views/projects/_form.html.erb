@@ -17,7 +17,7 @@
                   <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
                      <div class="e-divider-2"></div>
                      <div id="form-messages"></div>
-                       <%= form_for Project.new, remote: true, class: "wpcf7-form" do |f| %>
+                       <%= form_for Project.new, :builder => ProjectFormBuilder, remote: true, class: "wpcf7-form" do |f| %>
                           <div class="field">
                              <%= f.text_field :name, placeholder: "name" %>
                           </div>
@@ -27,8 +27,9 @@
                           </div>
                           <div class="e-divider-1"></div>
                           <div class="field">
-                             <%= f.text_field :github_repo, placeholder: "github repo" %>
+                            <%= f.github_repo_fields %>
                           </div>
+                          <p style="font-style: italic; font-size: 14px">*If your project includes two repos, for example, an API as well as a separate front-end application, add them both here. Adding just one repo is okay too!</p>
                           <div class="e-divider-1"></div>
                           <div class="field">
                              <!--<label for="message">Message:</label>-->

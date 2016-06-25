@@ -18,6 +18,6 @@ class ProjectsController < ApplicationController
   private
 
     def project_params
-      params.require(:project).permit(:name, :deployed_url, :github_repo, :description)
+      params.require(:project).permit(:name, :deployed_url, :description, :github_repos_from_form => ["0", "1"])
     end
 end
