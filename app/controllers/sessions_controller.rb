@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate
 
   def create
     user = User.find_from_auth(auth_hash)
@@ -6,8 +7,14 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to projects_path
     else
-      redirect_to root_path
+      redirect_to projects_path, notice: "Google Auth Failed, please try again"
     end
+  end
+
+  def destroy
+    user = User.find(session[:user_id])
+    log_out(user)
+    redirect_to projects_path
   end
 
   private

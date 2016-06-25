@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -16,8 +17,10 @@
     <div id="preloader"><%=image_tag 'preloader.gif'%></div>
       <div id="wrapper" class="">
         <a href="#menu-toggle" class="" id="menu-toggle"><span class="" aria-hidden="true"></span></a>
+        <h1><%= notice %></h1>
 
    <!-- Sidebar -->
+
      <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
            <li class="e-divider-4"></li>
@@ -84,9 +87,8 @@
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <nav class="collapse navbar-collapse navbar-ex1-collapse">
                      <ul class="nav navbar-nav navbar-right">
-                        <li><a href="portfolio-item.html">Product One</a></li>
                         <li class="dropdown">
-                           <a class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                           <a class="dropdown-toggle" data-toggle="dropdown">Dropdown  <b class="caret"></b></a>
                            <ul class="dropdown-menu">
                               <li><a href="#">Action</a></li>
                               <li><a href="#">Another action</a></li>
@@ -94,7 +96,7 @@
                               <li><a href="#">Separated link</a></li>
                            </ul>
                         </li>
-                        <li><a href="contact.html">Feedback</a></li>
+                        <%= render partial: "layouts/login_and_out" %>
                      </ul>
                   </nav><!-- /.navbar-collapse -->
                </div>
@@ -105,6 +107,3 @@
     </div>
   </body>
 </html>
-
-
-
