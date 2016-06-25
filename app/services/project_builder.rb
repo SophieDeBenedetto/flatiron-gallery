@@ -17,7 +17,7 @@ class ProjectBuilder
     repo_names.each do |repo_name|
       collabs = self.client.get_collaborators(repo_name)
       collabs.each do |collab|
-        Collaboration.create(project: project, user: User.find_by(github: collab["login"].downcase))
+        Collaboration.find_or_create_by(project: project, user: User.find_by(github: collab["login"].downcase))
       end
     end
   end
