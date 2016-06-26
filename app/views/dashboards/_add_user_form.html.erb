@@ -1,0 +1,48 @@
+<!-- Feedback Block -->
+         <section id="feedback-block" class="e-block-regular text-center bg-color01" style="padding-top: 50px">
+            <div class="container">
+               <div>
+                  <h3 class="font-accident-two-normal e-uppercase text-center">Add User</h3>
+                  <div class="e-divider-1"></div>
+                  <p class="small fontcolor-medium text-center">
+                      Add a User's first name, last name, and email address so they can add projects to the gallery
+                  </p>
+                  <p id="panel-update">
+
+                  </p>
+               </div>
+               <div class="e-divider-4"></div>
+               <div class="row">
+                  <div class="col-md-2">&nbsp;</div>
+                  <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
+                     <div class="e-divider-2"></div>
+                     <div id="form-messages"></div>
+                       <%= form_for User.new, remote: true, class: "wpcf7-form" do |f| %>
+                          <div class="field">
+                             <%= f.text_field :first_name, placeholder: "first name" %>
+                          </div>
+                          <div class="field">
+                             <%= f.text_field :last_name, placeholder: "last name" %>
+                          </div>
+                          <div class="field">
+                             <%= f.text_field :email, placeholder: "example@gmail.com" %>
+                          </div>
+                          <div class="e-divider-1"></div>
+                          <div class="e-divider-1"></div>
+                          <div class="e-divider-1"></div>
+                          <div class="e-divider-2"></div>
+
+                          <div class="field text-center">
+                            <%= f.submit class: "btn btn-lg btn-blk", data_attr: 'submit-btn' %>
+                          <% end %>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-2">&nbsp;</div>
+                  <div class="col-md-12 divider-dynamic"></div>
+               </div>
+            </div>
+            <div class="e-divider-4"></div>
+
+         </section>
+         <!-- /Feedback Block -->

@@ -10,7 +10,7 @@
      <div class="row">
         <div class="col-md-4">
           <%= render partial: "users/avatar", locals: {user: @user} %>
-           <div data-show="links"> 
+           <div data-show="links">
              <%= render partial: 'users/links', locals: {user: @user} %>
            </div>
 
@@ -23,7 +23,7 @@
               <div data-show="bio">
                 <%= render partial: "users/bio", locals: {user: @user} %>
               </div>
-              <div data-show="bio-form"> 
+              <div data-show="bio-form">
                 <%= render partial: "users/form_fields/bio_form_field", locals: {user: @user} %>
               </div>
 
@@ -111,5 +111,3 @@
 <div id="new-project">
   <%= render partial: "projects/form", locals: {project: Project.new} %>
 </div>
-
-
