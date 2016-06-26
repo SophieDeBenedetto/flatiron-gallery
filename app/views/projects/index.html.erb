@@ -205,14 +205,14 @@
                      <div class="grid-item posters misc col-lg-3 col-md-4 col-sm-6 nopadding">
                         <div class="item-wrap">
                            <figure class="effect-goliath">
-                           <%=image_tag "portfolio/thumbs/01-01.jpg", class: "img-responsive", alt: "img01"%>
+                           <%=image_tag @projects.first.screenshot(:medium), class: "img-responsive", alt: "img01"%>
                               
                               <figcaption>
                                  <div class="fig-description">
-                                    <h3>One</h3>
+                                    <h3><%= @projects.first.name %></h3>
                                     <p>#media-objects #misc</p>
                                  </div>
-                                 <a href="portfolio-item.html">View more</a>
+                                 <%= link_to project_path(@projecst.first), 'view more' %>
                               </figcaption>
                            </figure>
                         </div>

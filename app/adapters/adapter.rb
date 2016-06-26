@@ -4,8 +4,8 @@ module Adapter
       @client ||= Octokit::Client.new(access_token: ENV["OCTO_TOKEN"])
     end
 
-    def get_collaborators(repo)
-      @client.collaborators(repo)
+    def get_contributors(repo)
+      @client.contributors(repo)
     end
   end
 end
