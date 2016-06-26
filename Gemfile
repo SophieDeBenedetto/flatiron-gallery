@@ -35,6 +35,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem "factory_girl_rails"
   gem 'faker'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem "chromedriver-helper", "1.0.0"
 end
 
 group :development do
