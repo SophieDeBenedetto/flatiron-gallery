@@ -8,7 +8,6 @@
                       add a brief description of your project, along with the link to the repo and the link to the deployed site. <br> We'll handle getting a screenshot of your app for you, or you can upload your own picture in 300 X 250 px. .
                   </p>
                   <p id="panel-update">
-                    
                   </p>
                </div>
                <div class="e-divider-4"></div>
@@ -17,7 +16,7 @@
                   <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
                      <div class="e-divider-2"></div>
                      <div id="form-messages"></div>
-                       <%= form_for Project.new, :builder => ProjectFormBuilder, remote: true, class: "wpcf7-form" do |f| %>
+                       <%= form_for Project.new, :builder => ProjectFormBuilder, html: {multipart: :true}, remote: true, :authenticity_token => true, class: "wpcf7-form" do |f| %>
                           <div class="field">
                              <%= f.text_field :name, placeholder: "name" %>
                           </div>
@@ -37,6 +36,9 @@
                           </div>
                           <div class="e-divider-1"></div>
                           <div class="e-divider-2"></div>
+                          <div class="field">
+                            <%= f.file_field :screenshot %>
+                          </div>
 
                           <div class="field text-center">
                             <%= f.submit class: "btn btn-lg btn-blk", data_attr: 'submit-btn' %>
