@@ -7,11 +7,11 @@
        <h4 class="font-accident-two-normal e-uppercase"><%= project.name %></h4>
        <div class="e-divider-1"></div>
        <p class="small">
-         <%= image_tag project.screenshot.url(:medium), style: "border-bottom: none; padding-bottom: 1px;" %>
+         <%= image_tag project.screenshot.url(:medium), style: "border-bottom: none; padding-bottom: 1px; width: 233px" %>
        </p>
        <div class="e-divider-1"></div>
        <p class="small">
-         <%= projects.first.description %>
+         <%= project.description %>
        </p>
        <div class="e-divider-4"></div>
     </div>
