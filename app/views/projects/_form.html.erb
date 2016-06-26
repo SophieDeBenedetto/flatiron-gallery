@@ -18,6 +18,7 @@
                      <div class="e-divider-2"></div>
                      <div id="form-messages"></div>
                        <%= form_for Project.new, :builder => ProjectFormBuilder, remote: true, class: "wpcf7-form" do |f| %>
+                        <%= binding.pry %>
                           <div class="field">
                              <%= f.text_field :name, placeholder: "name" %>
                           </div>
@@ -37,6 +38,9 @@
                           </div>
                           <div class="e-divider-1"></div>
                           <div class="e-divider-2"></div>
+                          <div class="field">
+                            <%= f.file_field :screenshot %>
+                          </div>
 
                           <div class="field text-center">
                             <%= f.submit class: "btn btn-lg btn-blk", data_attr: 'submit-btn' %>

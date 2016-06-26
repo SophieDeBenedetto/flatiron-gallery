@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'remotipart', github: 'mshibuya/remotipart', ref: '3a6acb3'
 
 gem 'jbuilder', '~> 2.0'
@@ -24,6 +25,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'sidekiq'
 gem 'redis'
 gem 'octokit'
+gem 'phantomjs'
 
 group :development, :test do
   gem 'byebug', platform: :mri

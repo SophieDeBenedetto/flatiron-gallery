@@ -6,7 +6,7 @@
       </div>
       <div class="modal-body">
         <%= form_for user, html: {multipart: :true}, remote: true,  
-    :authenticity_token => true do |f| %>
+          :authenticity_token => true do |f| %>
           <%= f.file_field :avatar %>
           <%= f.submit%>
         <% end %>
