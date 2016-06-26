@@ -1,6 +1,5 @@
 class CohortsController < ApplicationController
   def create
-    binding.pry
     CohortBuilder.new(cohort_params).build
   end
 
