@@ -8,9 +8,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = ProjectBuilder.new(project_params, Adapter::GitHubWrapper.new).build
+    @project = ProjectBuilder.new(project_params).build
     respond_to do |f|
       if @project.save
+        ProjectCollaboratorBuilder.new(@project, Adapter::GitHubWrapper.new).build
         f.js {render "create.js.erb"}
       else
         f.js {render "create_failure.js.erb"}

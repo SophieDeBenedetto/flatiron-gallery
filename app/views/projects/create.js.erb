@@ -1,5 +1,4 @@
 <% if remotipart_submitted? %>
-
   <%- rendering = j render(partial: 'projects/form', locals: {project: @project}).to_str %>
   $("#new-project").html("<%= rendering %>")
   $("#panel-update").append("<div class='panel panel-success custom'>successfully added!</div>")

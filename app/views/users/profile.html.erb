@@ -2,7 +2,7 @@
   <p id="user-id" style="display: none"><%= @user.id %></p>
   <div class="container-fluid padding-side-60" id="profile-page">
 
-     <div class="e-divider-8"></div>
+    
      <div class="post-header">
         <div class="e-divider-2"></div>
      </div>
@@ -17,23 +17,25 @@
            <div data-show="links-form" id="links-form">
              <%= render partial: 'users/form_fields/links_fields', locals: {user: @user} %>
            </div>
+           <div class="e-divider-4"></div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-7">
-              <div data-show="bio">
-                <%= render partial: "users/bio", locals: {user: @user} %>
-              </div>
-              <div data-show="bio-form"> 
-                <%= render partial: "users/form_fields/bio_form_field", locals: {user: @user} %>
-              </div>
-
-
-           
+          <div data-show="bio">
+            <%= render partial: "users/bio", locals: {user: @user} %>
+          </div>
+          <div data-show="bio-form"> 
+            <%= render partial: "users/form_fields/bio_form_field", locals: {user: @user} %>
+          </div>
+          <div id="user-projects">
+            <%= render partial: 'users/projects', locals: {projects: @user.projects}  %>
+          </div>
+        </div>
      </div>
   </div>
 </section>
 <div id="new-project">
-  <%= render partial: "projects/form", locals: {project: Project.new} %>
+  <%= render partial: "projects/form" %>
 </div>
 
 
