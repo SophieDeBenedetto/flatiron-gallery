@@ -1,4 +1,5 @@
 class CohortsController < ApplicationController
+
   def create
     CohortBuilder.new(cohort_params).build
   end

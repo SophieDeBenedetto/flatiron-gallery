@@ -1,8 +1,10 @@
 <!-- Feedback Block -->
          <section id="feedback-block" class="e-block-regular text-center bg-color01" style="padding-top: 50px">
+           <h3 class="font-accident-two-normal e-uppercase text-center" id='add-project'>Add Project</h3>
+            <div class="add-project">
+
             <div class="container">
                <div>
-                  <h3 class="font-accident-two-normal e-uppercase text-center">Add Project</h3>
                   <div class="e-divider-1"></div>
                   <p class="small fontcolor-medium text-center">
                       add a brief description of your project, along with the link to the repo and the link to the deployed site. <br> We'll handle getting a screenshot of your app for you, or you can upload your own picture in 300 X 250 px. .
@@ -35,8 +37,8 @@
                              <!--<label for="message">Message:</label>-->
                              <%= f.text_area :description, placeholder: "add your description here...", rows: "7", cols: "30", required: "true" %>
                           </div>
-                          <div class="e-divider-1"></div>
-                          <div class="e-divider-2"></div>
+                          <!-- <div class="e-divider-1"></div> -->
+                          <!-- <div class="e-divider-2"></div> -->
 
                           <div class="field text-center">
                             <%= f.submit class: "btn btn-lg btn-blk", data_attr: 'submit-btn' %>
@@ -44,6 +46,7 @@
                         </div>
                      </form>
                   </div>
+                </div>
                   <div class="col-md-2">&nbsp;</div>
                   <div class="col-md-12 divider-dynamic"></div>
                </div>
