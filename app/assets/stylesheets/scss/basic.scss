@@ -19,6 +19,19 @@ body #port-item-details i {
   list-style: none;
 }
 
+.gallery-img {
+  height: 234px;
+  width: 240px;
+}
+
+.gallery-img:hover {
+  -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+}
+
 body {
   display: block;
   overflow-x: hidden;
