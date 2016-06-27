@@ -16,15 +16,13 @@
 
   <body>
     <div id="preloader"><%=image_tag 'preloader.gif'%></div>
-      <div id="wrapper" class="">
-        <a href="#menu-toggle" class="" id="menu-toggle"><span class="" aria-hidden="true"></span></a>
 
    <!-- Sidebar -->
-     <%= render partial: 'layouts/sidebar' %>
    <!-- /#sidebar-wrapper -->
 
    <!-- Content -->
    <div id="page-content-wrapper" class="content-wrap">
+     <%= render partial: 'layouts/sidebar' %>
 
       <!-- Header -->
       <%= yield %>

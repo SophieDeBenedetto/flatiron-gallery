@@ -14,9 +14,10 @@ class ProjectCollaboratorBuilder
 
   def add_collaborators
     self.repo_names.each do |repo_name|
-      collabs = self.client.get_collaborators(repo_name)
+      collabs = self.client.get_contributors(repo_name)
       collabs.each do |collab|
-        Collaboration.find_or_create_by(project: self.project, user: User.find_by(github: collab["login"].downcase))
+        user = User.find_by(github: collab["login"].downcase)
+        Collaboration.find_or_create_by(project: self.project, user: user) if user
       end
     end
   end

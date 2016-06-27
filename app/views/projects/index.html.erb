@@ -187,193 +187,53 @@
          <section id="portfolio" class="e-block e-block-skin pt-section" data-stellar-background-ratio="0.5" data-name="Portfolio">
             <div class="light">
 
-               <div id="isotope-filters" class="port-filter text-right">
-                  <ul>
-                     <li><a href="#cat1" data-filter="*">All</a></li>
-                     <li><a href="#cat2" data-filter=".posters">posters</a></li>
-                     <li><a href="#cat3" data-filter=".media-objects">media-objects</a></li>
-                     <li><a href="#cat4" data-filter=".misc">misc</a></li>
-                  </ul>
-               </div>
+               
 
                <div class="dividewhite4"></div>
 
-               <div class="grid container-fluid ">
+               <div class="grid container-fluid" style="width: 115%;">
 
                   <div id="posts" class="row popup-container">
-
-                     <div class="grid-item posters misc col-lg-3 col-md-4 col-sm-6 nopadding">
+                    <% first = "#3D9FC4" %>
+                    <% second = "white" %>
+                  <% @projects.each_slice(4) do |row| %>
+                    <% row.each_with_index do |project, i| %>
+                    <div class="grid-item posters grid-sizer media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding" style="background: <%= first %>; height: 234px; width: 265px;">
                         <div class="item-wrap">
-                           <figure class="effect-goliath">
-                           <%=image_tag "portfolio/thumbs/01-01.jpg", class: "img-responsive", alt: "img01"%>
-                              
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>One</h3>
-                                    <p>#media-objects #misc</p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
+                           <% if i.even? %>
+                           <figure class="my-effect-goliath">
+                                <div style="background: <%= first %>; height: 234px; width: 240px">
+                                  <figcaption>
+                                     <div class="fig-description">
+                                        <h3><%= project.name %></h3>
+                                        <p>#media-objects #misc</p>
+                                     </div>
+                                     <%= link_to project_path(project), 'view more' %>
+                                  </figcaption>
+                                </div>
+                               <%#=image_tag project.screenshot, class: "img-responsive gallery-img", alt: "img01"%>
+                                  
+                               </figure>
+                            <% else %>
+                                <figure class="my-effect-goliath">
+                                <div style="background: <%= second %>; height: 234px; width: 265px;">
+                                  <figcaption>
+                                     <div class="fig-description">
+                                        <h3><%= project.name %></h3>
+                                        <p>#media-objects #misc</p>
+                                     </div>
+                                     <%= link_to project_path(project), 'view more' %>
+                                  </figcaption>
+                                </div>
+                               <%#=image_tag project.screenshot, class: "img-responsive gallery-img", alt: "img01"%>
+                                  
+                               </figure>
+                            <% end %>
                         </div>
                      </div>
-                     <div class="grid-item grid-sizer posters col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                           <%=image_tag "portfolio/thumbs/02-01.jpg", class: "img-responsive", alt: "img02"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Two</h3>
-                                    <p>#posters #misc</p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                            <%=image_tag "portfolio/thumbs/03-01.jpg", class: "img-responsive", alt: "img03"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Three</h3>
-                                    <p>#media-objects #misc</p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                           <%=image_tag "portfolio/thumbs/04-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Four</h3>
-                                    <p>#media-objects #misc</p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-
-                     <div class="grid-item posters media-objects col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                              <%=image_tag "portfolio/thumbs/05-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Five</h3>
-                                    <p>#posters #media-objects </p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                             <%=image_tag "portfolio/thumbs/06-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Six</h3>
-                                    <p>#media-objects #misc</p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item posters col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                              <%=image_tag "portfolio/thumbs/07-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Seven</h3>
-                                    <p>#posters</p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item posters media-objects col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                              <%=image_tag "portfolio/thumbs/06-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Eight</h3>
-                                    <p>#others </p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-
-                     <div class="grid-item posters col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                              <%=image_tag "portfolio/thumbs/09-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Nine</h3>
-                                    <p>#others </p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item posters media-objects col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                              <%=image_tag "portfolio/thumbs/10-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Ten</h3>
-                                    <p>#others </p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item media-objects col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                             <%=image_tag "portfolio/thumbs/11-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Eleven</h3>
-                                    <p>#others </p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-                     <div class="grid-item media-objects posters col-lg-3 col-md-4 col-sm-6 nopadding">
-                        <div class="item-wrap">
-                           <figure class="effect-goliath">
-                              <%=image_tag "portfolio/thumbs/12-01.jpg", class: "img-responsive", alt: "img11"%>
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3>Twelve</h3>
-                                    <p>#others </p>
-                                 </div>
-                                 <a href="portfolio-item.html">View more</a>
-                              </figcaption>
-                           </figure>
-                        </div>
-                     </div>
-
+                        <% end %>
+                            <% first,second = second,first %>
+                     <% end %>
                   </div>
 
                </div>
