@@ -201,22 +201,45 @@
                <div class="grid container-fluid ">
 
                   <div id="posts" class="row popup-container">
-                  <% @projects.each do |project| %>
-                    <div class="grid-item posters grid-sizer media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding">
+                    <% first = "#3D9FC4" %>
+                    <% second = "white" %>
+                  <% @projects.each_slice(4) do |row| %>
+                    <% row.each_with_index do |project, i| %>
+                    <div class="grid-item posters grid-sizer media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding" style="background: <%= first %>; height: 234px; width: 240px">
                         <div class="item-wrap">
+                           <% if i.even? %>
                            <figure class="effect-goliath">
-                           <%=image_tag project.screenshot, class: "img-responsive gallery-img", alt: "img01"%>
-                              
-                              <figcaption>
-                                 <div class="fig-description">
-                                    <h3><%= project.name %></h3>
-                                    <p>#media-objects #misc</p>
-                                 </div>
-                                 <%= link_to project_path(project), 'view more' %>
-                              </figcaption>
-                           </figure>
+                                <div style="background: <%= first %>; height: 234px; width: 240px">
+                                  <figcaption>
+                                     <div class="fig-description">
+                                        <h3><%= project.name %></h3>
+                                        <p>#media-objects #misc</p>
+                                     </div>
+                                     <%= link_to project_path(project), 'view more' %>
+                                  </figcaption>
+                                </div>
+                               <%#=image_tag project.screenshot, class: "img-responsive gallery-img", alt: "img01"%>
+                                  
+                               </figure>
+                            <% else %>
+                                <figure class="effect-goliath">
+                                <div style="background: <%= second %>; height: 234px; width: 240px">
+                                  <figcaption>
+                                     <div class="fig-description">
+                                        <h3><%= project.name %></h3>
+                                        <p>#media-objects #misc</p>
+                                     </div>
+                                     <%= link_to project_path(project), 'view more' %>
+                                  </figcaption>
+                                </div>
+                               <%#=image_tag project.screenshot, class: "img-responsive gallery-img", alt: "img01"%>
+                                  
+                               </figure>
+                            <% end %>
                         </div>
                      </div>
+                        <% end %>
+                            <% first,second = second,first %>
                      <% end %>
                   </div>
 
