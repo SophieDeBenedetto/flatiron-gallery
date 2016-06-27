@@ -4,7 +4,7 @@
 
 // Transitions
 #wrapper,
-#sidebar-wrapper {
+#my-sidebar-wrapper {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -22,7 +22,7 @@
 
 #wrapper {  padding-left: 0;  }
 #wrapper.toggled {  padding-left: 300px;  }
-#sidebar-wrapper {
+#my-sidebar-wrapper {
   z-index: 901;
   position: fixed;
   left: 300px;
@@ -30,17 +30,18 @@
   width: 0;
   height: 100%;
   margin-left: -300px;
+  margin-right: 0px;
   overflow-y: auto;
   background: $color13;
 }
-#wrapper.toggled #sidebar-wrapper {  width: 300px;  }
+#wrapper.toggled #my-sidebar-wrapper {  width: 300px;  }
 #page-content-wrapper {
   width: 100%;
   position: absolute;
 }
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
-  margin-right: -300px;
+  // margin-right: -300px;
 }
 
 
@@ -120,8 +121,8 @@
 }
 .side-widget {
   color: $color04;
-  padding: 20px 60px;
-  width: 300px;
+  // padding: 20px 60px;
+  width: 250px;
   input {
     background-color: $color10;
     border: none;
@@ -131,9 +132,9 @@
 .bottom-widget {
   background: $color13;
   position: absolute;
-  width: 300px;
+  width: 250px;
   bottom: 0;
-  padding: 60px;
+  // padding: 60px;
   color: $color00;
   a {
     i {  font-size: 21px;  }
@@ -150,7 +151,7 @@
 @media (min-width:992px) {
   #wrapper {  padding-left: 300px;  }
   #wrapper.toggled {  padding-left: 0;  }
-  #sidebar-wrapper {  width: 300px;  }
+  #my-sidebar-wrapper {  width: 250px;  }
   #wrapper.toggled #sidebar-wrapper {  width: 0;  }
   #page-content-wrapper {  position: relative;  }
   #wrapper.toggled #page-content-wrapper {

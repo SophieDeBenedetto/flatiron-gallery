@@ -798,32 +798,32 @@ figure {
     letter-spacing: 1px;
     font-size: 68.5%; }
 
-figure.effect-goliath .popup-call {
+figure.my-effect-goliath .popup-call {
   position: absolute;
   top: 30px;
   left: 30px;
   /*z-index: 899;*/
   /*opacity: 0;*/
-  transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
+  /*transition: opacity 0.5s ease-in-out;*/
+  /*-moz-transition: opacity 0.5s ease-in-out;
   -webkit-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
-  -ms-transition: opacity 0.5s ease-in-out; }
+  -m*/s-transition: opacity 0.5s ease-in-out; }
   figure.effect-goliath .popup-call a:hover, figure.effect-goliath .popup-call a:focus {
     text-decoration: none; }
   figure.effect-goliath .popup-call a i {
-    color: #404040;
+    /*color: #404040;
     transition: color 0.5s ease-in-out;
     -moz-transition: color 0.5s ease-in-out;
     -webkit-transition: color 0.5s ease-in-out;
     -o-transition: color 0.5s ease-in-out;
-    -ms-transition: color 0.5s ease-in-out; }
+    -ms-tr*/ansition: color 0.5s ease-in-out; }
     figure.effect-goliath .popup-call a i::before {
       font-size: 24px;
       margin-left: 2px; }
-    figure.effect-goliath .popup-call a i:hover {
-      color: #E84855; }
-figure.effect-goliath figcaption {
+    /*figure.effect-goliath .popup-call a i:hover {*/
+      /*color: #E84855; }*/
+figure.my-effect-goliath figcaption {
   position: absolute;
   top: 0;
   left: 0;
@@ -831,44 +831,45 @@ figure.effect-goliath figcaption {
   height: 100%;
   text-align: center;
   font-size: 12px; }
-  figure.effect-goliath figcaption .fig-description {
+  figure.my-effect-goliath figcaption .fig-description {
     position: absolute;
     left: 30px;
     right: 30px;
-    bottom: 30px; }
-  figure.effect-goliath figcaption a {
+    bottom: 30px;
+    padding-bottom: 70px }
+  figure.my-effect-goliath figcaption a {
     color: #303030;
     font-size: 11px;
     line-height: 20px; }
-  figure.effect-goliath figcaption span {
+  figure.my-effect-goliath figcaption span {
     position: relative;
     margin-right: 2px; }
-figure.effect-goliath img, figure.effect-goliath h3 {
+figure.my-effect-goliath img, figure.effect-goliath h3 {
   -webkit-transition: -webkit-transform 3.5s;
   transition: transform 3.5s; }
-figure.effect-goliath img {
+figure.my-effect-goliath img {
   max-width: none;
   width: -webkit-calc(100% + 0px);
   width: calc(100% + 0px);
-  opacity: 1;}
-  /*-webkit-transition: opacity 3.5s, -webkit-transform 3.5s;
+  opacity: 1;
+  -webkit-transition: opacity 3.5s, -webkit-transform 3.5s;
   transition: opacity 3.5s, transform 3.5s;
   -webkit-transform: translate3d(0px, 0, 0) scale(1.12);
   transform: translate3d(0px, 0, 0) scale(1.12);
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }*/
-figure.effect-goliath h3 {
+  backface-visibility: hidden; }
+figure.my-effect-goliath h3 {
   font-family: "Montserrat", sans-serif;
   color: "Raleway", sans-serif !important;
   text-transform: uppercase;
   font-size: 16px;
-  opacity: 0;
+  /*opacity: 0;*/
   letter-spacing: 3px;
   -webkit-transition: opacity 1s, -webkit-transform 1s;
   transition: opacity 1s, transform 1s;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
-  figure.effect-goliath h3:before {
+  figure.my-effect-goliath h3:before {
     position: absolute;
     content: " ";
     text-align: center;
@@ -880,28 +881,28 @@ figure.effect-goliath h3 {
     -moz-transition: all 0.9s;
     transition: all 0.9s;
     transition-delay: .2s; }
-figure.effect-goliath p {
+figure.my-effect-goliath p {
   margin-top: 12px;
   color: #5d5d5d;
   text-transform: none;
   font-family: "Raleway", sans-serif;
-  font-size: 11px;}
-  /*opacity: 0;
+  font-size: 11px;
+  opacity: 3;
   -webkit-transition: opacity 0.5s, -webkit-transform 0.35s;
   transition: opacity 0.5s, transform 0.5s;
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }*/
-figure.effect-goliath:hover .popup-call {
+  transform: translate3d(0, 0, 0); }
+figure.my-effect-goliath:hover .popup-call {
   opacity: 1; }
-figure.effect-goliath:hover img {
+figure.my-effect-goliath:hover img {
   opacity: 0.8;
   -webkit-transform: translate3d(0, 0, 0) scale(1);
   transform: translate3d(0, 0, 0) scale(1); }
-figure.effect-goliath:hover h3 {
+figure.my-effect-goliath:hover h3 {
   opacity: 1; }
-  figure.effect-goliath:hover h3:before {
+  figure.my-effect-goliath:hover h3:before {
     width: 100%; }
-figure.effect-goliath:hover p {
+figure.my-effect-goliath:hover p {
   width: 100%;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);

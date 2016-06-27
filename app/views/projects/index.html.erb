@@ -187,28 +187,21 @@
          <section id="portfolio" class="e-block e-block-skin pt-section" data-stellar-background-ratio="0.5" data-name="Portfolio">
             <div class="light">
 
-               <div id="isotope-filters" class="port-filter text-right">
-                  <ul>
-                     <li><a href="#cat1" data-filter="*">All</a></li>
-                     <li><a href="#cat2" data-filter=".posters">posters</a></li>
-                     <li><a href="#cat3" data-filter=".media-objects">media-objects</a></li>
-                     <li><a href="#cat4" data-filter=".misc">misc</a></li>
-                  </ul>
-               </div>
+               
 
                <div class="dividewhite4"></div>
 
-               <div class="grid container-fluid ">
+               <div class="grid container-fluid" style="width: 115%;">
 
                   <div id="posts" class="row popup-container">
                     <% first = "#3D9FC4" %>
                     <% second = "white" %>
                   <% @projects.each_slice(4) do |row| %>
                     <% row.each_with_index do |project, i| %>
-                    <div class="grid-item posters grid-sizer media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding" style="background: <%= first %>; height: 234px; width: 240px">
+                    <div class="grid-item posters grid-sizer media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding" style="background: <%= first %>; height: 234px; width: 263px;">
                         <div class="item-wrap">
                            <% if i.even? %>
-                           <figure class="effect-goliath">
+                           <figure class="my-effect-goliath">
                                 <div style="background: <%= first %>; height: 234px; width: 240px">
                                   <figcaption>
                                      <div class="fig-description">
@@ -222,8 +215,8 @@
                                   
                                </figure>
                             <% else %>
-                                <figure class="effect-goliath">
-                                <div style="background: <%= second %>; height: 234px; width: 240px">
+                                <figure class="my-effect-goliath">
+                                <div style="background: <%= second %>; height: 234px; width: 263px;">
                                   <figcaption>
                                      <div class="fig-description">
                                         <h3><%= project.name %></h3>
