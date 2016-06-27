@@ -12,8 +12,10 @@
           <% if logged_in? %>
               <li><%= link_to "Profile", profile_path %></li>
           <% end %>
-           <li><%= render partial: "layouts/login_and_out"%>
-</li>
+          <% if is_admin? %>
+          <li><%= link_to "Admin Dashboard", dashboard_path%></li>
+          <% end %>
+           <li><%= render partial: "layouts/login_and_out"%></li>
         </ul>
         <div class="e-divider-4"></div>
         <div class="e-divider-4"></div>
@@ -28,6 +30,6 @@
            <p class="small">
               © 2016 Folius LLC.
            </p>
-            
+
         </div>
      </div>

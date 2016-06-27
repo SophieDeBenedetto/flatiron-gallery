@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
 
   def sanitize_github
+    unless self.github.nil?
     self.github = self.github.downcase
+  end
   end
 end

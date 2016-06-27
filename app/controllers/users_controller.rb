@@ -8,6 +8,17 @@ class UsersController < ApplicationController
     @user = UserDecorator.new(current_user)
   end
 
+  def create
+    @user = User.new(user_params)
+    respond_to do |format|
+      if @user.save
+       format.js {render "create.js.erb"}
+     else
+       format.js {render "create_failure.js.erb"}
+      end
+    end
+  end
+
   def update
     @form_type = params[:form] || "avatar"
     @user = UserDecorator.new(User.find(params[:id]))
@@ -19,6 +30,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :bio, :github, :twitter, :linkedin, :personal_site, :blog_url, :email, :avatar)
+      params.require(:user).permit(:first_name, :last_name, :bio, :github, :twitter, :linkedin, :personal_site, :blog_url, :email, :avatar, :cohort_id)
     end
 end
