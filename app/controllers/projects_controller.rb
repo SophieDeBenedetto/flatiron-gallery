@@ -18,7 +18,20 @@ class ProjectsController < ApplicationController
         f.js {render "create_failure.js.erb"}
       end
     end
+  end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    project = Project.find(params[:id])
+    if project.update(project_params)
+      redirect_to project_path(project)
+    else
+      flash[:message] = project.errors
+      render :edit
+    end
   end
 
   private

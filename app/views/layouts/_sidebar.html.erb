@@ -1,32 +1,30 @@
 <div id="my-sidebar-wrapper">
-        <ul class="sidebar-nav">
-           <li class="e-divider-4"></li>
-           <div class="e-divider-4"></div>
-           <div class="e-divider-4"></div>
-           <li class="sidebar-brand" style="width: 135px; margin-left: 10%;">
-            <%=image_tag "flatiron_school_slashes_transparent_background.png", height: "50", width: "35", alt: "logo"%>
-           </li>
-           <div class="e-divider-4"></div>
-           <div class="e-divider-4"></div>
-            <li><a href="/projects" class="current">Gallery</a></li>
-            <% if logged_in? %>
-              <li><%= link_to "Profile", profile_path %></li>
-            <% end %>
-           <li><%= render partial: "layouts/login_and_out"%></li>
-        </ul>
-        <div class="e-divider-4"></div>
-        <div class="e-divider-4"></div>
-        <div class="e-divider-4"></div>
-        <div class="side-widget">
-           <h6 class="font-accident-one-bold color03 e-uppercase">Flatiron School</h6>
-           <p class="small">
-              Some lovely quote about why Flatiron is Amazing
-           </p>
-        </div>
-        <div class="bottom-widget">
-           <p class="small">
-              © 2016 Folius LLC.
-           </p>
-            
-        </div>
-     </div>
+    <ul class="sidebar-nav">
+       <li class="e-divider-4"></li>
+       <div class="e-divider-4"></div>
+       <div class="e-divider-4"></div>
+       <li class="sidebar-brand" style="width: 135px; margin-left: 10%;">
+        <%=image_tag "flatiron_school_slashes_transparent_background.png", height: "50", width: "35", alt: "logo"%>
+       </li>
+       <div class="e-divider-4"></div>
+       <div class="e-divider-4"></div>
+        <li><a href="/projects" class="current">Gallery</a></li>
+        <% if logged_in? %>
+          <li><%= link_to "Profile", profile_path %></li>
+        <% end %>
+       <li><%= render partial: "layouts/login_and_out"%></li>
+    </ul>
+    <div class="e-divider-4"></div>
+    <div class="e-divider-4"></div>
+    <div class="e-divider-4"></div>
+    <div class="side-widget">
+       <h6 class="font-accident-one-bold color03 e-uppercase"><a href="http://flatironschool.com" class="flatiron-color">Flatiron School</a></h6>
+       <p class="small">
+          A school for people who love to create.
+       </p>
+       <div class="e-divider-10"></div>
+       <p class="small">
+          © 2016 Folius LLC.
+       </p>
+    </div>
+ </div>
