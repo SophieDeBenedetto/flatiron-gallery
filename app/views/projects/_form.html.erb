@@ -1,5 +1,5 @@
 <!-- Feedback Block -->
-         <section id="feedback-block" class="e-block-regular text-center bg-color01" style="padding-top: 50px">
+         <section id="feedback-block" class="e-block-regular text-center bg-color01 project-form" style="padding-top: 50px">
             <div class="container">
                <div>
                   <h3 class="font-accident-two-normal e-uppercase text-center">Add Project</h3>
@@ -22,16 +22,24 @@
                           </div>
                           <div class="e-divider-1"></div>
                           <div class="field">
+                             <%= f.text_field :one_liner, placeholder: "tag line" %>
+                          <div class="e-divider-1"></div>
+                          <div class="field">
                              <%= f.text_field :deployed_url, placeholder: "deployed url" %>
                           </div>
                           <div class="e-divider-1"></div>
                           <div class="field">
+                          <p style="font-style: italic; font-size: 14px">*If your project includes two repos, for example, an API as well as a separate front-end application, add them both here. Adding just one repo is okay too!</p>
                             <%= f.github_repo_fields %>
                           </div>
-                          <p style="font-style: italic; font-size: 14px">*If your project includes two repos, for example, an API as well as a separate front-end application, add them both here. Adding just one repo is okay too!</p>
+                          <div class="e-divider-1"></div>
+                          <div class="field tech-checkbox">
+                          <p style="font-style: italic; font-size: 14px">check all the technologies that apply to your app, or add your own.</p>
+                             <%= f.collection_check_boxes(:technology_ids, Technology.all, :id, :name) %>
+                             <i class="fa fa-plus-square-o" aria-hidden="true" data-select="add-new-tech"></i>
+                          </div>
                           <div class="e-divider-1"></div>
                           <div class="field">
-                             <!--<label for="message">Message:</label>-->
                              <%= f.text_area :description, placeholder: "add your description here...", rows: "7", cols: "30", required: "true" %>
                           </div>
                           <div class="e-divider-1"></div>

@@ -1,3 +1,32 @@
-<%= @project.name %>
+<section id="port-item-details">
+  <div class="container-fluid padding-side-60" id="profile-page">
 
-<%= image_tag @project.screenshot.url %>
+    
+     <div class="post-header">
+        <div class="e-divider-2"></div>
+     </div>
+     <div class="e-divider-4"></div>
+     <div class="row profile-row">
+        <div class="col-md-4">
+          <div id="show-avatar">
+            <%= image_tag @project.screenshot, class: "img-responsive", id: "screenshot-pic" %>
+         </div>
+           <div id="technologies">
+            <%= render partial: "projects/technologies", locals: {technologies: @project.technologies} %>
+           </div>
+           <div class="e-divider-4"></div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+          <div data-show="bio">
+           <h3 class="font-accident-two-normal e-uppercase"><%= @project.name %> <i class="fa fa-pencil-square-o" aria-hidden="true" data-select="edit" data-type="bio"></i></h3>
+          <div class="e-divider-2"></div>
+            <p>
+              <%= @project.description %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+<%= render partial: "projects/collaborators", locals: {project: @project} %>
+
