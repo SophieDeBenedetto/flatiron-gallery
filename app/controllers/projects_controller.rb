@@ -24,7 +24,6 @@ class ProjectsController < ApplicationController
   private
 
     def project_params
-      binding.pry
       params.require(:project).permit(:name, :deployed_url, :description, :screenshot, :one_liner, :github_repos_from_form => ["0", "1"], :technology_ids => [], :new_technologies => [:name])
     end
 end

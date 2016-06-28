@@ -9,7 +9,7 @@
      <div class="row profile-row">
         <div class="col-md-4">
           <div id="show-avatar">
-            <%= image_tag @project.screenshot, class: "img-responsive", id: "screenshot-pic" %>
+            <%= image_tag @project.screenshot, class: "img-responsive", id: "screenshot-pic", style: "padding-bottom: 20px;"%>
          </div>
            <div id="technologies">
             <%= render partial: "projects/technologies", locals: {technologies: @project.technologies} %>
@@ -19,7 +19,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-7">
           <div data-show="bio">
-           <h3 class="font-accident-two-normal e-uppercase"><%= @project.name %> <i class="fa fa-pencil-square-o" aria-hidden="true" data-select="edit" data-type="bio"></i></h3>
+           <h3 class="font-accident-two-normal e-uppercase"><%= @project.name %></h3>
           <div class="e-divider-2"></div>
             <p>
               <%= @project.description %>
