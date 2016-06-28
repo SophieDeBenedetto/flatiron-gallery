@@ -12,12 +12,7 @@
             <%= image_tag @project.screenshot, class: "img-responsive", id: "screenshot-pic" %>
          </div>
            <div id="technologies">
-             <ul class="jobinfo" style="margin-top: 10px">
-               <li>Rails</li>
-               <li>jQuery</li>
-               <li>AJAX</li>
-               <li>Postresql</li>
-             </ul>
+            <%= render partial: "projects/technologies", locals: {technologies: @project.technologies} %>
            </div>
            <div class="e-divider-4"></div>
         </div>

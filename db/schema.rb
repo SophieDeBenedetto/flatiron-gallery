@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20160628151426) do
 
   create_table "project_technologies", force: :cascade do |t|
     t.integer "project_id"
-    t.integer "technologie_id"
+    t.integer "technology_id"
     t.index ["project_id"], name: "index_project_technologies_on_project_id", using: :btree
-    t.index ["technologie_id"], name: "index_project_technologies_on_technologie_id", using: :btree
+    t.index ["technology_id"], name: "index_project_technologies_on_technology_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
