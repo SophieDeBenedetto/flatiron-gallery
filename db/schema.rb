@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627191238) do
+ActiveRecord::Schema.define(version: 20160628151426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20160627191238) do
     t.index ["user_id"], name: "index_collaborations_on_user_id", using: :btree
   end
 
+  create_table "project_technologies", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "technologie_id"
+    t.index ["project_id"], name: "index_project_technologies_on_project_id", using: :btree
+    t.index ["technologie_id"], name: "index_project_technologies_on_technologie_id", using: :btree
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",                           null: false
@@ -43,6 +50,10 @@ ActiveRecord::Schema.define(version: 20160627191238) do
     t.datetime "screenshot_updated_at"
     t.boolean  "featured"
     t.string   "one_liner"
+  end
+
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
