@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :email, :first_name, :last_name, presence: true
 
-  has_attached_file :avatar, styles: { medium: "320x240>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { medium: "320x240>", thumb: "100x100>", small: "150x100" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   before_create :sanitize_github
