@@ -16,7 +16,6 @@ class Project < ApplicationRecord
   end
 
   def technology_ids=(collection)
-    binding.pry
     techs = collection.map {|id| Technology.find(id) unless id.empty?}.compact
     self.technologies = techs
   end
