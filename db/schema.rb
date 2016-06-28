@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625234934) do
+ActiveRecord::Schema.define(version: 20160627191238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20160625234934) do
     t.string   "screenshot_content_type"
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
+    t.boolean  "featured"
+    t.string   "one_liner"
   end
 
   create_table "users", force: :cascade do |t|

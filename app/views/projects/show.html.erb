@@ -1,3 +1,28 @@
-<%= @project.name %>
+<div class="row project-show-row">
+   <!-- Colleagues -->
+   <section id="colleagues" class="e-block-short">
+      <div class="container-fluid padding-side-50">
 
-<%= image_tag @project.screenshot.url %>
+         <div class="text-center">
+            <h3 class="font-accident-two-normal e-uppercase">Project Collaboratos</h3>
+            <div class="e-divider-8"></div>
+         </div>
+
+         <div class="row">
+            <% @project.users.each do |user| %>
+               <div class="col-md-<%= col_md(@project.users.length) %> col-xs-<%= @project.users.length %> text-center">
+                  <div class="e-width-80 e-centered collegaues">
+                     <%= image_tag user.avatar.url(:medium), alt: "#{user.full_name}", class: "img-responsive author-userpic" %>
+                     <div class="e-divider-3"></div>
+                     <p class="font-accident-one-bold e-uppercase"><%= link_to user.full_name, user_path(user) %></p>
+                     <div class="e-divider-dynamic"></div>
+                  </div>
+               </div>
+            <% end %>
+         </div>
+      </div>
+   </section>
+      <!-- /Colleagues -->
+</div>
+   <!-- /Content Sections -->
+

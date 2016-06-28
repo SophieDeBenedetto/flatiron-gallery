@@ -3,6 +3,8 @@ $(function(){
   $("[data-show='links-form']").hide();
   $("[data-select='edit']").showForm();
   submitForm();
+  readMoreScroll();
+  findPos();
 })
 
 $.fn.showForm = function(e) {
@@ -34,6 +36,24 @@ function handleSubmit(that){
       data: $(that).parents('form').serialize()
     })
   }
+}
+
+function readMoreScroll() {
+  $("[data-id='read-more']").on("click", function(){  
+    debugger;
+    window.scroll(0,findPos($("#more")))
+  })
+}
+
+function findPos(obj) {
+  debugger
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop];
+    }
 }
 
 

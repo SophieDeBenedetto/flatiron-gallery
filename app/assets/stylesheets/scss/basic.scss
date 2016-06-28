@@ -1,7 +1,7 @@
 
 
 
-// Body
+// Body Custom
 #wrapper {
   padding-right: 0px;
 }
@@ -28,7 +28,19 @@ body #port-item-details i {
   padding-left: 250px;
 }
 
+.profile-row {
+  margin-left: 250px
+}
 
+.project-form {
+  margin-left: 200px;
+}
+
+.project-show-row {
+  margin-left: 250px;
+}
+
+// end custom
 
 body {
   display: block;
