@@ -1,0 +1,6 @@
+<% if remotipart_submitted? %>
+  $(".panel-success").show();
+  $('.panel-fail').hide();
+<% else %>
+  $("#panel-update").append("<%= j render(partial: 'cohorts/success') %>")
+<% end %>

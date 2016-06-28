@@ -9,9 +9,13 @@ class CohortBuilder
   end
 
   def build
-    CSV.foreach(@csv.tempfile, headers: :true) do |row|
-      User.find_or_create_by(first_name: row['first_name'], last_name: row['last_name'], github: row['github_username'], email: row['email'], cohort: cohort)
+    if @csv.nil?
+      return false
+    else
+      CSV.foreach(@csv.tempfile, headers: :true) do |row|
+        User.find_or_create_by(first_name: row['first_name'], last_name: row['last_name'], github: row['github_username'], email: row['email'], cohort: cohort)
+        end
+      end
+      cohort
     end
-    cohort
-  end
 end

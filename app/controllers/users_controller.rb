@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       if @user.save
        format.js {render "create.js.erb"}
      else
-       format.js {render "create_failure.js.erb"}
+       format.js {render "fail.js.erb"}
       end
     end
   end

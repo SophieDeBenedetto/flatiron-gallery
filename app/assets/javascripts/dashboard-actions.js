@@ -3,12 +3,18 @@ $(function(){
   $('.add-cohort').hide();
   $('.add-user').hide();
   $('.add-project').hide();
+  $('.panel-success').hide();
+  $('.panel-fail').hide();
+  $('#user-panel').hide();
+  $('#user-panel-fail').hide();
+
 
   function toggleCohort(){
     $('#add-cohort').on('click', function(){
       $('.add-cohort').slideToggle();
     });
   }
+
   function toggleAddUser(){
     $('#add-user').on('click', function(){
       $('.add-user').slideToggle();
@@ -63,5 +69,5 @@ $(function(){
 
   //form submisson
 
- 
+
 });

@@ -1,6 +1,8 @@
 <!-- Feedback Block -->
          <section id="feedback-block" class="e-block-regular text-center bg-color01" style="padding-top: 50px">
+
            <h3 class="font-accident-two-normal e-uppercase text-center" id='add-cohort'>Add Cohort</h3>
+           
            <div class="add-cohort">
             <div class="container">
 
@@ -8,10 +10,22 @@
                   <p class="small fontcolor-medium text-center">
                       Add your Cohort's CSV roster so they can add projects to the gallery <br> We'll take care of the rest :)
                   </p>
-                  <p id="panel-update">
+                  <!-- <p id="panel-update"> -->
+                  <div class='panel-sucess'>
+                    <div class="panel panel-success custom">
+                      successfully added!
+                      <span class="glyphicon glyphicon-ok fa-1x" style='left:15px'></span>
+                    </div>
+                  </div>
 
-                  </p>
-               <div class="e-divider-4"></div>
+                  <div class="panel-fail">
+                    <div class="panel custom" style='color:red;'>
+                      oh no, something went wrong. please try that again
+                    <span class="glyphicon glyphicon-remove fa-1x" style='left:15px'></span>
+                      </div>
+                  </div>
+                  <!-- </p> -->
+            <div class="e-divider-4"></div>
                <div class="row">
                   <div class="col-md-2">&nbsp;</div>
                   <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">

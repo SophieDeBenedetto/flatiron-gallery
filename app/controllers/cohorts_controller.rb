@@ -3,10 +3,10 @@ class CohortsController < ApplicationController
   def create
     @cohort = CohortBuilder.new(cohort_params).build
     respond_to do |format|
-      if @cohort.save
-        format.js {render "success.js.erb"}
+      if @cohort
+        format.js {render "create.js.erb"}
       else
-        format.js {render json: @cohort}
+        format.js {render "fail.js.erb"}
       end
     end
   end
