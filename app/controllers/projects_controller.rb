@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate, only: [:index]
   def index
+    @featured = Project.where(featured: true)
     @projects = Project.all
   end
 

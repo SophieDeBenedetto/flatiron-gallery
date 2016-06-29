@@ -20,7 +20,7 @@
         <div class="col-md-7">
           <h3 class="font-accident-two-normal e-uppercase">
             <%= @project.name %>
-            <% if @project.users.include?(current_user) %>
+            <% if @project.users.include?(current_user) || current_user.instructor%>
               <a href="<%= edit_project_path(@project) %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
             <% end %>
           </h3>
