@@ -2,7 +2,7 @@ require 'fileutils'
 class ScreenshotHandler
 
   attr_accessor :project
-  PATH_TO_PHANTOM_SCRIPT = Rails.root.join('app', 'assets', 'javascripts', 'screenshot.js')
+  PATH_TO_PHANTOM_SCRIPT = Rails.root.join('lib', 'scripts', 'screenshot.js')
 
   def initialize(project)
     @project = project
