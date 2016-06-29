@@ -1,4 +1,4 @@
-require 'FileUtils'
+require 'fileutils'
 class ScreenshotHandler
 
   attr_accessor :project
