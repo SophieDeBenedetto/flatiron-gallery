@@ -7,12 +7,12 @@ class ScreenshotHandler
   def initialize(project)
     @project = project
     @screenshot_filename = "#{project.name.gsub(" ", "_")}.png"
-    @path_to_tmp = Rails.root.join('public', 'images', @screenshot_filename)
+    @path_to_tmp = File.join(Rails.root, 'public', 'images', @screenshot_filename)
     puts @path_to_tmp
   end
   
   def get_and_save_screenshot
-    Dir.chdir(Rails.root.join('public', 'images'))
+    Dir.chdir(File.join(Rails.root, 'public', 'images'))
     system "phantomjs #{PATH_TO_PHANTOM_SCRIPT} #{project.deployed_url} #{@screenshot_filename}"
     project.screenshot = File.new("#{@path_to_tmp}")
     remove_tmp_image
