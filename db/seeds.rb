@@ -21,3 +21,5 @@ Technology.create(name: "jQuery")
 Technology.create(name: "JavaScript")
 Technology.create(name: "Ember")
 Technology.create(name: "Postgresql")
+
+User.create(first_name: "Sophie", last_name: "DeBenedetto", github: "sophiedebenedetto", twitter: "sm_debenedetto", linkedin: "sophiedebenedetto", email: "sophie@flatironschool.com")
