@@ -10,9 +10,10 @@ class Project < ApplicationRecord
 
   def github_repos_from_form=(attributes)
     # {"0"=>"http://github.com/sophiedebenedetto/catbook-api", "1"=>"http://github.com/sophiedebenedetto/catbook-front"}
-    attributes.each do |key, repo_url|
-      self.github_repos << repo_url unless repo_url.strip.empty?
+    repos = attributes.collect do |key, repo_url|
+     repo_url unless repo_url.empty?
     end
+    self.github_repos = repos.compact
   end
 
   def technology_ids=(collection)

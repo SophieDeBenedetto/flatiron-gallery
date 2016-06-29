@@ -18,13 +18,21 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-7">
-          <div data-show="bio">
-           <h3 class="font-accident-two-normal e-uppercase"><%= @project.name %></h3>
+          <h3 class="font-accident-two-normal e-uppercase">
+            <%= @project.name %>
+            <% if @project.users.include?(current_user) || current_user.instructor%>
+              <a href="<%= edit_project_path(@project) %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <% end %>
+          </h3>
           <div class="e-divider-2"></div>
             <p>
               <%= @project.description %>
             </p>
-          </div>
+            <div class="e-divider-2"></div>
+            <h5><span class="flatiron-color">//</span> <%= link_to "visit the app", @project.deployed_url %></h5>
+            <% @project.github_repos.each do |r| %>
+              <h5><span class="flatiron-color">//</span> <%= link_to "view the code on GitHub", r %></h5>
+            <% end %>
         </div>
       </div>
     </div>

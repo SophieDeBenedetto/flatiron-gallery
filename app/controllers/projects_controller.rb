@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate, only: [:index]
   def index
+    @featured = Project.where(featured: true)
     @projects = Project.all
   end
 
@@ -18,7 +19,20 @@ class ProjectsController < ApplicationController
         f.js {render "create_failure.js.erb"}
       end
     end
+  end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    project = Project.find(params[:id])
+    if project.update(project_params)
+      redirect_to project_path(project)
+    else
+      flash[:message] = project.errors
+      render :edit
+    end
   end
 
   private

@@ -48,6 +48,31 @@ body #port-item-details i {
 .tech-checkbox > input {
   width: 20px
 }
+
+.flatiron-color {
+  color: #3D9FC4;
+}
+
+#my-slider {
+  background:rgba(56,255,255,0.1);
+}
+
+#my-title {
+  background:rgba(205,206,255,0.1);
+}
+
+
+#my-title i::before {
+  font-size: 25px
+}
+
+#my-title > a {
+  color: #3D9FC4
+}
+
+i {
+  font-size: 20px
+}
 // end custom
 
 body {
