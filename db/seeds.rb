@@ -9,9 +9,11 @@ CSV.foreach(Rails.root.join('public', 'bangarang-projects.csv'), headers: true) 
   p = Project.find_or_create_by(deployed_url: row["Heroku/Surge Url"])
   p.github_repos = row["github"].split("," || "\n").map {|repo| repo.strip}
   p.name = row["Project Name"]
-  ScreenshotHandler.new(p).get_and_save_screenshot if p.deployed_url
+  ScreenshotHandler.new(p).get_and_save_screenshot if p.deployed_url && !p.screenshot
   ProjectCollaboratorBuilder.new(p, Adapter::GitHubWrapper.new).build
   p.save
+  puts p.name 
+  puts p.errors if p.errors.any?
 end
 
 
