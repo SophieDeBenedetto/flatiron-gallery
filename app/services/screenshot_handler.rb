@@ -8,6 +8,7 @@ class ScreenshotHandler
     @project = project
     @screenshot_filename = "#{project.name.gsub(" ", "_")}.png"
     @path_to_tmp = Rails.root.join('public', 'images', @screenshot_filename)
+    puts @path_to_tmp
   end
   
   def get_and_save_screenshot
