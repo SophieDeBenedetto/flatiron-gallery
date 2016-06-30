@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  skip_before_action :authenticate, only: [:show]
   def show
     @user = UserDecorator.new(User.find(params[:id]))
   end
