@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def sanitize_github
     self.github = self.github.downcase
   end
+
+  def instructor?
+    !!instructor
+  end
 end

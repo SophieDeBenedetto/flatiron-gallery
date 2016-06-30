@@ -38,7 +38,7 @@ function handleSubmit(that){
 }
 
 function addTechField() {
-  $("#new-project").on("click", $("[data-select='add-new-tech']"), function(e){
+  $("#project-form").on("click", $("[data-select='add-new-tech']"), function(e){
    if (e.toElement.dataset.select == "add-new-tech") {
       var num = 0
       if ($(".new-tech").length != 0) {

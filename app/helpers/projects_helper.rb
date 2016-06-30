@@ -16,4 +16,12 @@ module ProjectsHelper
       "1" => {"md" => "12", "sm" => "12"}
      }
   end
+
+  def can_edit?(project)
+    if current_user
+      project.users.include?(current_user) || current_user.instructor?
+    else
+      false
+    end
+  end
 end
