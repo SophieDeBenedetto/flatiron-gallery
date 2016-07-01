@@ -12,7 +12,7 @@
           <% project.users.each do |user| %>
              <div class="col-md-<%= col_md(project.users.length) %> col-xs-<%= project.users.length %> text-center">
                 <div class="e-width-80 e-centered collegaues">
-                   <%= image_tag UserDecorator.new(user).show_avatar, alt: "#{user.full_name}", class: "collab-img" %>
+                   <%= image_tag UserDecorator.new(user).show_avatar, alt: "#{user.full_name}", class: "collab-img", style: "height: 200px; width: 200px; padding-bottom: 3px" %>
                    <div class="e-divider-3"></div>
                    <p class="font-accident-one-bold e-uppercase"><%= link_to user.full_name, user_path(user) %></p>
                 </div>

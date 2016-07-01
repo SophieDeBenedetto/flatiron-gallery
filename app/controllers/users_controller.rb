@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate, only: [:show]
   def show
+    user = User.find(params[:id])
+    if current_user == user
+      redirect_to profile_path
+    end
     @user = UserDecorator.new(User.find(params[:id]))
-  end
-
-  def profile
-    @user = UserDecorator.new(current_user)
   end
 
   def update

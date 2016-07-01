@@ -6,9 +6,9 @@
      <div class="e-divider-4"></div>
      <div class="row profile-row">
         <div class="col-md-4">
-          <%= image_tag @user.show_avatar, class: "img-responsive", id: "profile-pic", style: "padding-bottom: 20px;"%>
+          <%= image_tag @user.show_avatar, class: "img-responsive", id: "profile-pic", style: "padding-bottom: 20px; height: 300px; width: 300px;"%>
            <div>
-             <ul class="jobinfo">
+             <ul class="jobinfo" style="width: 90%">
                 <% @user.social_links.each do |link_type, link| %>
                   <% if link_type == "email" %>
                     <li><%= link %></li>
