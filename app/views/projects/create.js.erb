@@ -6,7 +6,7 @@
   $("#user-projects").html("<%= rendering %>")
 
 <% else %>
-  $("#project-form").html("<%= j render(partial: 'projects/new_form', locals: {project: @project}) %>")
+  $("#project-form").html("<%= j render(partial: 'projects/new_form', locals: {project: Project.new}) %>")
   $("#panel-update").append("<%= j render(partial: 'projects/success') %>")
   $("#user-projects").html("<%= j render partial: 'users/projects', locals: {projects: current_user.projects} %>")
 <% end %>
