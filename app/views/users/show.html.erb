@@ -9,13 +9,14 @@
           <%= image_tag @user.show_avatar, class: "img-responsive", id: "profile-pic", style: "padding-bottom: 20px;"%>
            <div>
              <ul class="jobinfo">
-              <li><%=link_to "github", "http://github.com/#{@user.github}"%></li>
-              <li><%=link_to "twitter", "https://twitter.com/#{@user.twitter}"%></li>
-              <li><%=@user.email%></li>
-              <li><%=link_to "linkedin", "https://linkedin.com/in#{@user.linkedin}"%></li>
-              <li><%=link_to "personal site", @user.personal_site%></li>
-              <li><%=link_to "blog", @user.blog_url%></li>
-            </ul>
+                <% @user.social_links.each do |link_type, link| %>
+                  <% if link_type == "email" %>
+                    <li><%= link %></li>
+                  <% else %>
+                    <li><%=link_to link_type, link%></li>
+                  <% end %>
+                <% end %>
+              </ul>
            </div>
            <div class="e-divider-4"></div>
         </div>

@@ -8,6 +8,14 @@ class Project < ApplicationRecord
   has_attached_file :screenshot, styles: { medium: "233x240>", thumb: "100x100>" }, default_url: "missing.png"
   validates_attachment_content_type :screenshot, content_type: /\Aimage\/.*\Z/
 
+  before_save :normalize_deployed_url
+
+  def normalize_deployed_url
+    if !self.deployed_url.include?("http")
+      self.deployed_url.prepend("http://")
+    end
+  end
+
   def github_repos_from_form=(attributes)
     # {"0"=>"http://github.com/sophiedebenedetto/catbook-api", "1"=>"http://github.com/sophiedebenedetto/catbook-front"}
     repos = attributes.collect do |key, repo_url|

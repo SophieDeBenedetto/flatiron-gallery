@@ -4,27 +4,18 @@ class UserDecorator < SimpleDelegator
     avatar.url == "/images/original/missing.png" ? "default-profile.png" : avatar.url(:medium)
   end
 
-  def twitter_form_field
-    self.twitter || "twitter"
+  def social_links
+    social_links = {}
+    social_links["github"] = "http://github.com/#{github}" if github
+    social_links["email"] = email if email
+    social_links["blog"] = blog_url if blog_url
+    social_links["twitter"] = "https://twitter.com/#{twitter}" if twitter
+    social_links["linkedin"] = "https://linkedin.com/in#{linkedin}" if linkedin
+    social_links["personal site"] = personal_site if personal_site
+    social_links
   end
 
-  def linkedin_form_field
-    self.linkedin || "linkedin"
-  end
-
-  def github_form_field
-    self.github || "github"
-  end
-
-  def personal_site_form_field
-    self.personal_site || "personal_site"
-  end
-
-  def blog_form_field
-    self.blog_url || "blog"
-  end
-
-  def email_form_field
-    self.email || "email"
+  def show_bio
+    (bio && !bio.empty?) ? bio : "add your bio here!"
   end
 end
