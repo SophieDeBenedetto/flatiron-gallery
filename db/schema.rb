@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625145058) do
+ActiveRecord::Schema.define(version: 20160628185915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160625145058) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "bio"
+    t.boolean  "email_confirmed",     default: false
+    t.string   "confirm_token"
     t.index ["cohort_id"], name: "index_users_on_cohort_id", using: :btree
   end
 

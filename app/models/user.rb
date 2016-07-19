@@ -18,10 +18,21 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def first_name_to_email
+    "#{first_name}".downcase.concat("@flatironschool.com")
+  end
 
   def sanitize_github
     unless self.github.nil?
-    self.github = self.github.downcase
+      self.github = self.github.downcase
+    end
   end
+
+  def set_confirmation_token
+    if confirm_token.blank?
+       confirm_token = SecureRandom.urlsafe_base64.to_s
+       save(validate: false)
+    end
   end
+
 end

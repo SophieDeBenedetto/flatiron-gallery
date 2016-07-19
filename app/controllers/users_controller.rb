@@ -9,9 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
+        # PrimeUserEmail.new(@user).set_confirmation_token
+        # UserMailer.user_invite(@user).deliver_now
        format.js {render "create.js.erb"}
      else
        format.js {render "fail.js.erb"}
@@ -30,6 +33,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :bio, :github, :twitter, :linkedin, :personal_site, :blog_url, :email, :avatar, :cohort_id)
+      params.require(:user).permit(:first_name, :last_name, :bio, :github, :twitter, :linkedin, :personal_site, :blog_url, :email, :avatar, :cohort_id, :conf)
     end
 end

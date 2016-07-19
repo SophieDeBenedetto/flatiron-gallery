@@ -1,0 +1,5 @@
+<h2> Hello, Admin </h2>
+
+<p> <%= @user.full_name %> is requesting admin access.</p>
+
+<p>To grant them access, please click this link <%= link_to "Grant Acess", confirm_admin_url(@user.confirm_token, host: "localhost:3000") %> </p>
