@@ -18,6 +18,7 @@
                              data_bgposition: "center center",
                              data_bgfit: "cover",
                              data_bgrepeat: "no-repeat",
+                             id: 'my-img',
                              style: "height: 75%;"%>
 
                         <div class="tp-caption cap-title font-accident-two-normal color00 e-uppercase tp-resizeme rs-parallaxlevel-2" id="my-title"
@@ -97,6 +98,22 @@
                      </div>
                         <% end %>
                             <% first,second = second,first %>
+                     <% end %>
+                     <% if @projects.length == 7 %>
+                        <div class="grid-item posters grid-sizer media-objects misc col-lg-3 col-md-4 col-sm-6 nopadding" style="background: <%= first %>; height: 234px; width: 25%;">
+                        <div class="item-wrap">
+                           <figure class="my-effect-goliath">
+                                <div style="background: <%= first %>; height: 234px; width: 240px">
+                                  <figcaption>
+                                     <div class="fig-description">
+                                        <h3>About</h3>
+                                        <p>The Flatiron Project Gallery: Showcasing the React + Redux projects of the Web Immersive Program</p>
+                                     </div>
+                                  </figcaption>
+                                </div>     
+                               </figure>
+                        </div>
+                     </div>
                      <% end %>
                   </div>
 
