@@ -5,8 +5,10 @@ class Project < ApplicationRecord
   has_many :technologies, through: :project_technologies
   validates :deployed_url, :github_repos, :name, presence: true
   validates :deployed_url, :github_repos, uniqueness: true
-  has_attached_file :screenshot, styles: { medium: "233x240>", thumb: "100x100>" }, default_url: "missing.png", :storage => :s3, :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
-  validates_attachment_content_type :screenshot, content_type: /\Aimage\/.*\Z/
+  has_attached_file :screenshot, styles: { medium: "233x240>", thumb: "100x100>" }, default_url: "missing.png"
+  validates_attachment_content_type :screenshot, content_type: [/png\Z/, /jpeg\Z/, /tiff\Z/, /bmp\Z/, /jpg\Z/]
+  # validates_attachment_file_name :image_file, matches: [/png\Z/, /jpeg\Z/, /tiff\Z/, /bmp\Z/, /jpg\Z/]
+  # validates_attachment_content_type :screenshot, content_type: /\Aimage\/.*\Z/
 
   before_save :normalize_deployed_url
 
