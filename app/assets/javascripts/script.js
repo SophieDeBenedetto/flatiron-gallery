@@ -27,7 +27,7 @@
                     swipe_direction: "horizontal"
                 },
                 arrows: {
-                    style: "hesperiden",
+                    style: "ares",
                     enable: true,
                     hide_onmobile: true,
                     hide_onleave: true,
