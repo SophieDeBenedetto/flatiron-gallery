@@ -5,10 +5,16 @@ class Project < ApplicationRecord
   has_many :technologies, through: :project_technologies
   validates :deployed_url, :github_repos, :name, presence: true
   validates :deployed_url, :github_repos, uniqueness: true
-  has_attached_file :screenshot, styles: { medium: "233x240>", thumb: "100x100>" }, default_url: "missing.png"
+  has_attached_file :screenshot, styles: { medium: "233x240>", thumb: "100x100>" }, default_url: "missing.png", :storage => :s3, :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
   validates_attachment_content_type :screenshot, content_type: /\Aimage\/.*\Z/
 
   before_save :normalize_deployed_url
+
+  def s3_credentials
+    {:bucket => ENV["S3_BUCKET_NAME"], :access_key_id => ENV["AWS_KEY"], :secret_access_key => ENV["AWS_SECRET"]}
+  end
+
+ 
 
   def normalize_deployed_url
     if !self.deployed_url.include?("http")
